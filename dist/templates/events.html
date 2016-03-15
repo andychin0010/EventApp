@@ -1,0 +1,46 @@
+<div class="container">
+	<div class="row">
+		<h4 class="center">{{ name }}'s Events</h4>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8">
+			<button class="btn-lg btn-primary" ng-click="createEvent()">+ Events</button>
+			<button class="btn-lg btn-danger pull-right" ng-click="deleteEvent()">- Events</button>
+		</div>
+	</div>
+	<div class="row space-top">
+		<div class="col-md-offset-2 col-md-8" ng-repeat="event in events">
+			<table class="table table-bordered table-responsive">
+				<thead>
+					<tr class="active">
+						<th></th><th>{{ event.eventName }}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Host</th><td>{{ event.eventHost }}</td>
+					</tr>
+					<tr>
+						<th>Type</th><td>{{ event.eventType }}</td>
+					</tr>
+					<tr>
+						<th>Location</th><td>{{ event.eventLocation }}</td>
+					</tr>
+					<tr>
+						<th>Start Time</th><td>{{ event.eventStartDate }}</td>
+					</tr>
+					<tr>
+						<th>End Time</th><td>{{ event.eventEndDate }}</td>
+					</tr>
+					<tr>
+						<th>Guests</th><td>{{ event.eventGuests }}</td>
+					</tr>
+					<tr ng-if="event.eventNotes">
+						<th>Notes</th><td>{{ event.eventNotes }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+

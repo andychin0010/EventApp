@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="eventApp">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title></title>
+	<link rel="stylesheet" href="plugins/normalize.css">
+	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body ng-controller="mainController">
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" ng-if="user">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Event App</a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse" ng-if="user">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" ng-click="logout()">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div ng-view autoscroll="true"></div>
+
+
+	<!-- Plugins -->
+	<script src="plugins/jquery.min.js"></script>
+	<script src="plugins/bootstrap/js/bootstrap.js"></script>
+	<script src="plugins/angularjs/angular.min.js"></script>
+	<script src="plugins/angularjs/angular-route.min.js"></script>
+	<script src="plugins/angularjs/angular-sanitize.min.js"></script>
+
+	<script src="js/eventConfig.js"></script>
+	<script src="js/eventControllers.js"></script>
+</body>
+</html>
